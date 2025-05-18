@@ -37,3 +37,29 @@ const myFunction = function(){
 }
 
 console.log(typeof heros); 
+
+
+// ++++++++++++++++++++++++++++++++++ Memory ++++++++++++++++++++++++++++++
+
+// Stack (Primitive), Heap (Non-primitive)
+
+let myDetails = "Akhilrajput"
+
+let myFun = myDetails
+myDetails = "Nikhilrajput"
+
+console.log(myFun);
+console.log(myDetails);
+
+let user1 = {
+    email: "user123@gmail.com",
+    upi: "user@sbi"
+}
+
+let user2 = user1
+
+user2.email = "user345345@yahoo.com"
+
+console.log(user1.email);
+console.log(user2.email);
+
