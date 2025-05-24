@@ -1,0 +1,47 @@
+<!-- JavaScript --- Synchronous (line by line code execution) 
+                --- Single Thread
+    
+    Execution Context --- Execute one line of code at a time (by default)
+    |
+    |--- console.log(1) -- 1
+    |                                     (each operation waits for the last one to complete 
+    |--- console.log(2) -- 2              before executing.)
+    |
+    |
+    |
+    <> 
+
+             Blocking Code       VS        Non-Blocking Code
+                 |                               |
+                 |                               |
+      Block the flow of program           Does not block execution
+                 |                               |
+                 |                               |
+        Read file Sync                      Read file Async --->
+
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+<body>
+    <h1>Event Project Concepts</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayAkhil = function () {
+        console.log("Akhil");
+    }
+    const changeText = function() {
+        document.querySelector('h1').innerHTML = "Best JavaScript Series"
+    }
+    const changeMe = setTimeout(changeText, 2000)
+    document.querySelector("#stop").addEventListener('click', function () {
+        clearTimeout(changeMe)  
+        console.log("Stopped");
+    })
+</script>
+</html>
